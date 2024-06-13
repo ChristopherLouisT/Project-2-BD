@@ -1,0 +1,64 @@
+CREATE TABLE kelas(
+    id_kelas SERIAL PRIMARY KEY,
+    jenisKelas VARCHAR NOT NULL
+);
+
+CREATE TABLE tahun_ajaran(
+    id_tahunajaran SERIAL PRIMARY KEY,
+    tahun_ajaran VARCHAR NOT NULL
+);
+
+CREATE TABLE kelas_suatu_tahun (
+    id_kelastahun SERIAL PRIMARY KEY,
+    kelas_suatu_tahun VARCHAR NOT NULL,
+    id_kelas INT NOT NULL REFERENCES kelas(id_kelas), 
+    id_tahunajaran INT NOT NULL REFERENCES tahun_ajaran(id_tahunajaran) 
+);
+
+CREATE TABLE guru(
+    id_guru SERIAL PRIMARY KEY,
+    nama VARCHAR NOT NULL,
+    gender VARCHAR(1) NOT NULL,
+    tanggal_Lahir DATE NOT NULL,
+    noTelp_guru VARCHAR(14) NOT NULL,
+    alamat VARCHAR
+);
+
+CREATE TABLE histori_guru_kelas(
+    id_historiguru SERIAL PRIMARY KEY,
+    id_guru INT NOT NULL REFERENCES guru(id_guru), 
+    id_kelastahun INT NOT NULL REFERENCES kelas_suatu_tahun(id_kelastahun)
+);
+
+CREATE TABLE anak(
+    id_anak SERIAL PRIMARY KEY,
+    nama VARCHAR NOT NULL,
+    gender VARCHAR(1) NOT NULL,
+    tanggal_lahir DATE NOT NULL,
+    jumlah_kehadiran INT DEFAULT 0 NOT NULL,
+    alamat TEXT,
+    nama_wali VARCHAR,
+    noTelp_wali VARCHAR(14)
+);
+
+CREATE TABLE histori_anak_kelas (
+    id_histori_anak SERIAL PRIMARY KEY,
+    id_anak INT NOT NULL, 
+    id_kelas_tahun INT NOT NULL, 
+    FOREIGN KEY(id_anak) REFERENCES anak(id_anak),
+    FOREIGN KEY(id_kelas_tahun) REFERENCES kelas_suatu_tahun(id_kelastahun)
+);
+
+CREATE TABLE kebaktian(
+    id_kebaktian SERIAL PRIMARY KEY,
+    tema_kebaktian VARCHAR
+);
+
+CREATE TABLE data_kehadiran(
+    id_kehadiran SERIAL PRIMARY KEY,
+    id_anak INT NOT NULL REFERENCES anak(id_anak), 
+    id_kebaktian INT NOT NULL REFERENCES kebaktian(id_kebaktian), 
+    keterangan_kehadiran VARCHAR(1) NOT NULL,
+    tanggal_kebaktian DATE
+);
+
