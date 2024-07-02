@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="423.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cobafx.TahunAjaranController">
+    <children>
+        <TableView fx:id="tableTahunAjaran" layoutX="23.0" layoutY="74.0" prefHeight="297.0" prefWidth="577.0">
+            <columns>
+                <TableColumn fx:id="idTahunAjaran" prefWidth="256.800012588501" text="ID Tahun Ajaran" />
+                <TableColumn fx:id="tahunAjaran" prefWidth="293.6000061035156" text="Tahun Ajaran" />
+            </columns>
+        </TableView>
+        <Button fx:id="back" layoutX="269.0" layoutY="383.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="25.0" prefWidth="62.0" text="Back" />
+        <TextField fx:id="IdTahunAjaranField" layoutX="23.0" layoutY="6.0" prefHeight="25.0" prefWidth="200.0" promptText="ID Tahun Ajaran" />
+        <TextField fx:id="TahunAjaranField" layoutX="233.0" layoutY="6.0" prefHeight="25.0" prefWidth="200.0" promptText="Tahun Ajaran" />
+        <Button fx:id="add" layoutX="445.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleAddTahunAjaran" text="Add" />
+        <Button fx:id="update" layoutX="491.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleUpdateTahunAjaran" text="Update" />
+        <Button fx:id="delete" layoutX="551.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleDeleteTahunAjaran" text="Delete" />
+        <Button fx:id="search" layoutX="438.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleSearchTahunAjaran" text="Search" />
+        <TextField fx:id="searchField" layoutX="23.0" layoutY="39.0" prefHeight="25.0" prefWidth="400.0" promptText="Search Tahun Ajaran" />
+    </children>
+</AnchorPane>

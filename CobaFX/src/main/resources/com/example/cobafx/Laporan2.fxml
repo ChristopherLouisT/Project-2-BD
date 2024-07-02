@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cobafx.laporan2Controller">
+    <children>
+        <TableView fx:id="tableLaporan2" layoutX="23.0" layoutY="37.0" prefHeight="325.0" prefWidth="553.0">
+            <columns>
+                <TableColumn fx:id="jenisKelas" prefWidth="335.3332824707031" text="Jenis Kelas" />
+                <TableColumn fx:id="count" prefWidth="217.3333740234375" text="Jumlah Anak" />
+            </columns>
+        </TableView>
+        <Button fx:id="Back" layoutX="280.0" layoutY="368.0" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Back" />
+    </children>
+</AnchorPane>
